@@ -11,15 +11,28 @@ body {
     font-family: 'Sawarabi Gothic', sans-serif;
 }
 
+body,
+html {
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+}
+
 section {
     background: var(--primary-color);
     color: var(--secondary-color);
     height: 100vh;
+    font-size: 200%;
     left: 0;
     padding: 2em;
     position: absolute;
+    text-align: center;
     top: 0;
-    width: 100vh;
+    width: 100vw;
+}
+
+h1 {
+    font-size: 200%;
 }
 
 .current {

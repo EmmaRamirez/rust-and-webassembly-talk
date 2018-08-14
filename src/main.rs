@@ -8,6 +8,16 @@ fn is_north(dir: Direction) -> bool {
     }
 }
 
+#[wasm_bindgen]
+extern {
+    pub fn alert(s: &str);
+}
+
+#[wasm_bindgen]
+pub fn greet(name: &str) {
+    alert(&fromat!("Hello, {}!", name));
+}
+
 fn main() {
     let points = Direction::South;
     println!("{:?}", points);
