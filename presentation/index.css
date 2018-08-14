@@ -1,0 +1,27 @@
+:root {
+    --primary-color: #333;
+    --secondary-color: #eee;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Sawarabi Gothic', sans-serif;
+}
+
+section {
+    background: var(--primary-color);
+    color: var(--secondary-color);
+    height: 100vh;
+    left: 0;
+    padding: 2em;
+    position: absolute;
+    top: 0;
+    width: 100vh;
+}
+
+.current {
+    z-index: 10;
+}
