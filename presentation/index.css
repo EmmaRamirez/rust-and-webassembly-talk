@@ -1,6 +1,6 @@
 :root {
-    --primary-color: #333;
-    --secondary-color: #eee;
+    --primary-color: #fff;
+    --secondary-color: #111;
 }
 
 * {
@@ -8,7 +8,7 @@
 }
 
 body {
-    font-family: 'Sawarabi Gothic', sans-serif;
+    font-family: 'Open Sans', sans-serif;
 }
 
 body,
@@ -19,6 +19,8 @@ html {
 }
 
 section {
+    background: var(--primary-color);
+    color: var(--secondary-color);
     height: 100vh;
     font-size: 200%;
     left: 0;
@@ -34,4 +36,28 @@ h1 {
 
 .current {
     z-index: 10;
+}
+
+.sticky-footer {
+    color: white;
+    position: absolute;
+    bottom: 0;
+    right: 1rem;
+    padding: 1rem;
+    z-index: 10;
+}
+
+.sticky-footer img {
+    height: 1rem;
+    display: inline-block;
+}
+
+.sticky-footer a {
+    color: lightblue;
+}
+
+.center {
+    align-items: center;
+    display: flex;
+    justify-content: center;
 }
