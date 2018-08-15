@@ -1,5 +1,7 @@
 # Assembling the Web 
 
+## Better Performance in JS Apps with Rust & Webassembly
+
 ### 🦀 + 🕸
 
 #### ![twitter](./assets/twitter.png) [@EmmaGRamirez](https://twitter.com/EmmaGRamirez) | ![github](./assets/github.png) [EmmaRamirez](https://github.com/EmmaRamirez)
@@ -19,18 +21,10 @@
 
 ---
 
-## A Brief History of Trying to Embed Things in JavaScript
-
-- Java Applets
-- Asm.js
-
----
-
 ## Things to Know About JS
 
 - JS is dynamic
 - JS uses garbage collection
-    - Eventually we'll have to use the host-binding proposal
 - JS is incredibly optimized
 
 ---
@@ -169,6 +163,71 @@ https://twitter.com/jxxf/status/1027358517462626304
 ## `wasm-bindgen`
 
 ![wb](./assets/wasm-bindgen.png)
+
+---
+
+```rust
+#[wasm_bindgen]
+pub struct Universe {
+    width: u32,
+    height: u32,
+    cells: Vec<Cell>,
+}
+```
+---
+
+```typescript
+export class Universe {
+free(): void;
+static  new(): Universe;
+
+ width(): number;
+
+ height(): number;
+
+ cells(): number;
+
+ tick(): void;
+
+}
+```
+
+---
+
+```javascript
+const drawCells = () => {
+  const cellsPtr = universe.cells();
+  const cells = new Uint8Array(memory.buffer, cellsPtr, width * height);
+
+  ctx.beginPath();
+
+  for (let row = 0; row < height; row++) {
+    for (let col = 0; col < width; col++) {
+      const idx = getIndex(row, col);
+
+      ctx.fillStyle = cells[idx] === DEAD
+        ? DEAD_COLOR
+        : ALIVE_COLOR;
+
+      ctx.fillRect(
+        col * (CELL_SIZE + 1) + 1,
+        row * (CELL_SIZE + 1) + 1,
+        CELL_SIZE,
+        CELL_SIZE
+      );
+    }
+  }
+
+  ctx.stroke();
+};
+```
+
+---
+
+```javascript
+const cellsPtr = universe.cells();
+const cells = new Uint8Array(memory.buffer, cellsPtr, width * height);
+```
 
 ---
 
