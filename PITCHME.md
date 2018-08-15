@@ -2,7 +2,7 @@
 
 ### 🦀 + 🕸
 
-#### ![twitter](./assets/twitter.png)[@EmmaGRamirez](https://twitter.com/EmmaGRamirez) | ![github](./assets/github.png)[EmmaRamirez](https://github.com/EmmaRamirez)
+#### ![twitter](./assets/twitter.png) [@EmmaGRamirez](https://twitter.com/EmmaGRamirez) | ![github](./assets/github.png) [EmmaRamirez](https://github.com/EmmaRamirez)
 
 
 ---
@@ -13,7 +13,7 @@
 
 ## Follow Along!
 
-> [link](https://github.com/EmmaRamirez/rust-and-webassembly-talk)
+[✨ click here ✨](https://github.com/EmmaRamirez/rust-and-webassembly-talk)
 
 ![talk](./assets/the-talk.png)
 
@@ -35,7 +35,21 @@
 
 ---
 
-![wasm](./assets/wasm.svg)
+# JS Performance
+
+---
+
+![perf1](./assets/perf1.png)
+by Lin Clark
+
+---
+
+![perf2](./assets/perf2.png)
+by Lin Clark
+
+---
+
+![wasm](./assets/wasm.png)
 
 ---
 
@@ -65,7 +79,7 @@ pub extern "C" fn add_one(x: i32) -> i32 {
 
 ### Wasm
 
-```webassembly
+```rust
 (module
   (type $t0 (func (param i32) (result i32)))
   (func $add_one (export "add_one") (type $t0) (param $p0 i32) (result i32)
@@ -81,11 +95,15 @@ pub extern "C" fn add_one(x: i32) -> i32 {
 ### JS "Bridge"
 
 ```javascript
-fetch('../out/main.wasm').then(response =>
-  response.arrayBuffer()
-).then(bytes => WebAssembly.instantiate(bytes)).then(results => {
-  instance = results.instance;
-  document.getElementById("container").innerText = instance.exports.add_one(41);
+const container = document.getElementById('container');
+fetch('../out/main.wasm')
+    .then(response =>
+        response.arrayBuffer()
+    )
+    .then(bytes => WebAssembly.instantiate(bytes))
+    .then(results => {
+        instance = results.instance;
+    container.innerText = instance.exports.add_one(41);
 }).catch(console.error);
 ```
 
@@ -112,7 +130,7 @@ Wasm is supported in all major browsers, but the spec is still developing. (Howe
 
 ---
 
-## Why Rust
+## Why Rust?
 
 ```shell
 cargo build --target wasm-unknown-unknown
