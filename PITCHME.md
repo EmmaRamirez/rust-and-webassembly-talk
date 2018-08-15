@@ -34,14 +34,18 @@
 ---
 
 ![perf1](./assets/perf1.png)
+
 by Lin Clark
 
 ---
 
 ![perf2](./assets/perf2.png)
+
 by Lin Clark
 
 ---
+
+## WEBASSEMBLY
 
 ![wasm](./assets/wasm.png)
 
@@ -60,15 +64,6 @@ by Lin Clark
 
 ## Contrived Canonical Example
 
-### Rust
-
-```rust
-#[no_mangle]
-pub extern "C" fn add_one(x: i32) -> i32 {
-    x + 1
-}
-```
-
 ---
 
 ### Wasm
@@ -82,6 +77,17 @@ pub extern "C" fn add_one(x: i32) -> i32 {
     i32.add)
   (table $T0 1 1 anyfunc)
   (memory $memory (export "memory") 17))
+```
+
+---
+
+### Rust
+
+```rust
+#[no_mangle]
+pub extern "C" fn add_one(x: i32) -> i32 {
+    x + 1
+}
 ```
 
 ---
@@ -103,6 +109,10 @@ fetch('../out/main.wasm')
 
 ---
 
+42
+
+---
+
 # Is WASM going to replace JS?
 
 ---
@@ -113,12 +123,14 @@ fetch('../out/main.wasm')
 
 ## Limitations of Wasm
 
-Wasm modules can only call functions that deal with:
+Wasm only uses 4 value types:
 
 - i32
 - i64
 - f32
 - f64
+
+Wasm uses *linear memory*
 
 Wasm is supported in all major browsers, but the spec is still developing. (However new iterations will be fully backwards compatible!)
 
@@ -140,13 +152,11 @@ cargo build --target wasm-unknown-unknown
 
 ---
 
-## Vim
-
----
-
 https://twitter.com/jxxf/status/1027358517462626304
 
-![process](./assets/build-process.png)
+![process](./assets/revamp.jpeg)
+
+---
 
 - Used 8 different systems with 8 different adapters to produce an insurance quote
 - Coordinator process was CPU-expensive
