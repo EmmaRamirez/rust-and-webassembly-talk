@@ -19,16 +19,13 @@ html {
 }
 
 section {
-    background: var(--primary-color);
-    color: var(--secondary-color);
     height: 100vh;
     font-size: 200%;
     left: 0;
     padding: 2em;
     position: absolute;
-    text-align: center;
     top: 0;
-    width: 100vw;
+    width: 101vw;
 }
 
 h1 {

@@ -4,7 +4,11 @@
   "description": "## Information",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build:ts": "tsc ./presentation/index.ts",
+    "build": "npm run build:ts && make",
+    "build:ts:watch": "npm run build:ts -- --watch",
+    "start": "python -m SimpleHTTPServer"
   },
   "repository": {
     "type": "git",
@@ -12,7 +16,7 @@
   },
   "keywords": [],
   "author": "",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/EmmaRamirez/rust-and-webassembly-talk/issues"
   },

@@ -10,10 +10,12 @@
         </script>
         <script src='./index.js'></script>
         <link href='./index.css' rel='stylesheet'>
+        <link href='https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/2.10.0/github-markdown.css' rel='stylesheet'>
         <link href="https://fonts.googleapis.com/css?family=Sawarabi+Gothic" rel="stylesheet">
     </head>
     <body>
         <section>
+            <h1>🦀 + 🕸</h1>
             <h1>✨ Assembling the Web</h1>
             <h2>🔧 Better Web App Performance with Rust and Webassembly</h2>
         </section>
@@ -22,6 +24,83 @@
         </section>
         <section>
             <h2>Webass What??</h2>
+        </section>
+
+        <section>
+            <h2>A Brief History of Trying to Embed Things in Javascript</h2>
+            <ul>
+                <li>Java Applets</li>
+                <li>asm.js</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Emscripten</h2>
+        </section>
+
+        <section>
+            <h2>Why Wasm?</h2>
+            <ul>
+                <li>Part of the Open Web Platform</li>
+                <li>Memory safe (sandboxed)</li>
+                <li>Achieves High Performance (speed &amp; size)</li>
+            </ul>
+        </section>
+
+        <section>
+            <code>
+<pre>
+(module
+    (type $0 (func (param i32 i32) (result i32)))
+    (export "add" $add)
+    (func $add (type $0) (param $var$0 i32) (param $var$1 i32) (result i32)
+        (i32.add
+            (get_local $var$0)
+            (get_local $var1)
+        )
+    )
+)
+</pre>
+            </code>
+        </section>
+
+        <section>
+            <h2>Limitations of Wasm</h2>
+            <p>Wasm modules can only call functions that deal with:</p>
+            <ul>
+                <li>i32</li>
+                <li>i64</li>
+                <li>f32</li>
+                <li>f64</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2></h2>
+
+        </section>
+
+        <section>
+            <h2>Why Rust?</h2>
+            <code>
+                cargo build --target wasm-unknown-unknown
+            </code>
+            <ul>
+                <li>Fast as C++</li>
+                <li>Memory-safe</li>
+                <li>Thread-safe</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Limitations</h2>
+            <p>Wasm modules can only call functions that deal with:</p>
+            <ul>
+                <li>i32</li>
+                <li>i64</li>
+                <li>f32</li>
+                <li>f64</li>
+            </ul>
         </section>
 
         <section>
@@ -37,5 +116,17 @@
         <section>
             <h2>The Future</h2>
         </section>
+
+        <div style='
+            color: white;
+            position: absolute;
+            bottom: 0;
+            right: 1rem;
+            padding: 1rem;
+            z-index: 10;
+        '>
+            <a href='https://github.com'>EmmaRamirez</a>
+            <a href='https://twitter.com/EmmaGRamirez'>@EmmaGRamirez</a>
+        </div>
     </body>
 </html>

@@ -1,3 +1,7 @@
+interface ArrayConstructor {
+    from<T>(arrayLike: ArrayLike<T>): Array<T>;
+}
+
 (() => {
     const state = {
         currentSlide: 0,
