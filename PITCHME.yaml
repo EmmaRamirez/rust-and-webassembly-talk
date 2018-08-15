@@ -1,0 +1,3 @@
+theme-override : assets/custom.css
+transition : fade
+highlight : agate
