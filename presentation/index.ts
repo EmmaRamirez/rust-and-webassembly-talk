@@ -1,6 +1,3 @@
-import { greet } from './wasm_game_of_life';
-
-greet("Rust and WASM");
 
 interface ArrayConstructor {
     from<T>(arrayLike: ArrayLike<T>): Array<T>;

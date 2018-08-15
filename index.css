@@ -53,7 +53,8 @@ h1 {
 }
 
 .sticky-footer a {
-    color: lightblue;
+    color: cornflowerblue;
+    text-decoration: none;
 }
 
 .center {
