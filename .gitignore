@@ -2,3 +2,5 @@
 **/*.rs.bk
 *.js
 node_modules
+wasm_game_of_life_bg.wasm
+wasm_game_of_life.d.ts
