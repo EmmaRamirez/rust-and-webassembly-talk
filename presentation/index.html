@@ -19,9 +19,11 @@
             <h1>✨ Assembling the Web 🔧</h1>
             <h2>Better Web App Performance with Rust and Webassembly</h2>
         </section>
+
         <section>
-            <h2>What This Talk is About</h2>
+            <img src='./wasm.svg'>
         </section>
+
         <section>
             <h2>Webass What??</h2>
         </section>
@@ -31,6 +33,15 @@
             <ul>
                 <li>Java Applets</li>
                 <li>asm.js</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Things to Know About JS</h2>
+            <ul>
+                <li>JS is dyanic</li>
+                <li>JS uses garbage collection</li>
+                <li>Eventually we'll have the host-binding proposal (https://github.com/WebAssembly/host-bindings/blob/master/proposals/host-bindings/Overview.md)</li>
             </ul>
         </section>
 
@@ -112,6 +123,22 @@
         </section>
 
         <section>
+            <h1>In the Wild</h1>
+        </section>
+
+        <section>
+            <h1>Raytracer</h1>
+        </section>
+
+        <section>
+            <h1>Vim</h1>
+        </section>
+
+        <section>
+            <h1>https://twitter.com/jxxf/status/1027358517462626304</h1>
+        </section>
+
+        <section>
             <h2>js-sys</h2>
             <p>Get access to API from the ECMAScript standard without having to write them by hand with bindgen.</p>
             <code>
@@ -143,7 +170,7 @@ pub fn timed(callback: &js_sys::Function) -> f64 {
                 <li>C/C++</li>
                 <li><a href='https://github.com/AssemblyScript'>AssemblyScript</a></li>
                 <li>Turboscript</li>
-                <li>PHP???</li>
+                <li>https://grain-lang.org/</li>
             </ul>
         </section>
 
