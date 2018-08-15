@@ -2,7 +2,7 @@
 
 ### 🦀 + 🕸
 
-#### [@EmmaGRamirez](https://twitter.com/EmmaGRamirez) | [EmmaRamirez](https://github.com/EmmaRamirez)
+#### ![twitter](assets/twitter.png)[@EmmaGRamirez](https://twitter.com/EmmaGRamirez) | ![github](assets/github.png)[EmmaRamirez](https://github.com/EmmaRamirez)
 
 
 ---
@@ -13,7 +13,7 @@
 
 # Follow Along!
 
-### [Quality Link to Talk Repo](https://github.com/EmmaRamirez/rust-and-webassembly-talk)
+[![talk](./assets/the-talk.png)](https://github.com/EmmaRamirez/rust-and-webassembly-talk)
 
 ---
 
@@ -76,7 +76,7 @@ pub extern "C" fn add_one(x: i32) -> i32 {
 
 ---
 
-# JS "Bridge"
+## JS "Bridge"
 
 ```javascript
 fetch('../out/main.wasm').then(response =>
