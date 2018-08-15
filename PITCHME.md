@@ -33,6 +33,10 @@
 
 ---
 
+![wasm](assets/wasm.svg)
+
+---
+
 # Why Wasm?
 
 - Part of the [Open Web Platform](https://github.com/webassembly/design)
@@ -46,17 +50,41 @@
 
 # Contrived Canonical Example
 
+## Rust
+
 ```rust
+#[no_mangle]
+pub extern "C" fn add_one(x: i32) -> i32 {
+    x + 1
+}
+```
+
+---
+
+## Wasm
+
+```webassembly
 (module
-    (type $0 (func (param i32 i32) (result i32)))
-    (export "add" $add)
-    (func $add (type $0) (param $var$0 i32) (param $var$1 i32) (result i32)
-        (i32.add
-            (get_local $var$0)
-            (get_local $var1)
-        )
-    )
-)
+  (type $t0 (func (param i32) (result i32)))
+  (func $add_one (export "add_one") (type $t0) (param $p0 i32) (result i32)
+    get_local $p0
+    i32.const 1
+    i32.add)
+  (table $T0 1 1 anyfunc)
+  (memory $memory (export "memory") 17))
+```
+
+---
+
+# JS "Bridge"
+
+```javascript
+fetch('../out/main.wasm').then(response =>
+  response.arrayBuffer()
+).then(bytes => WebAssembly.instantiate(bytes)).then(results => {
+  instance = results.instance;
+  document.getElementById("container").innerText = instance.exports.add_one(41);
+}).catch(console.error);
 ```
 
 ---
@@ -96,7 +124,7 @@ cargo build --target wasm-unknown-unknown
 
 # In the Wild
 
-<img src='./raytracer-wasm.png'>
+[!ray](assets/raytracer-wasm.png)
 
 ---
 
@@ -110,6 +138,11 @@ https://twitter.com/jxxf/status/1027358517462626304
 ---
 
 # Tools & Ecosystem
+
+---
+
+# wasm-bindgen
+
 
 
 ---
@@ -152,3 +185,6 @@ pub fn timed(callback: &js_sys::Function) -> f64 {
 
 # The Future
 
+- Host bindings
+- Garbage collection
+- SIMD
