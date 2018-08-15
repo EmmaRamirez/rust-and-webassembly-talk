@@ -11,6 +11,12 @@
 
 ---
 
+# Follow Along!
+
+### [Quality Link to Talk Repo](https://github.com/EmmaRamirez/rust-and-webassembly-talk)
+
+---
+
 # A Brief History of Trying to Embed Things in JavaScript
 
 - Java Applets
