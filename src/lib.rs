@@ -2,6 +2,7 @@
 
 extern crate wasm_bindgen;
 
+// Let's import wasm_bindgen!
 use wasm_bindgen::prelude::*;
 
 #[wasm_bindgen]
@@ -10,6 +11,7 @@ extern {
     fn log(msg: &str);
 }
 
+// TODO: Logging with macro
 macro_rules! log {
     ($($t:tt)*) => (log(&format!($($t)*)))
 }
@@ -19,6 +21,15 @@ macro_rules! log {
 pub enum Cell {
     Dead = 0,
     Alive = 1,
+}
+
+impl Cell {
+    fn toggle(&mut self) {
+        *self = match *self {
+            Cell::Dead => Cell::Alive,
+            Cell::Alive => Cell::Dead,
+        };
+    }
 }
 
 #[wasm_bindgen]

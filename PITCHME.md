@@ -142,11 +142,11 @@ cargo build --target wasm-unknown-unknown
 
 ---
 
-# In the Wild
+## Game of Life
 
 ---
 
-<iframe src='http://localhost:' />
+# 
 
 
 ---
@@ -165,6 +165,14 @@ cargo build --target wasm-unknown-unknown
 
 https://twitter.com/jxxf/status/1027358517462626304
 
+![process](./assets/build-process.png)
+
+- Used 8 different systems with 8 different adapters to produce an insurance quote
+- Coordinator process was CPU-expensive
+- Instead of offloading that work to AWS, switched to wasm written in Rust
+- Now the user just submits, waits for "processing..." for 15 seconds, then done!
+- Took 2 weeks. Saved $1.3 million
+
 ---
 
 ## Tools & Ecosystem
@@ -173,7 +181,7 @@ https://twitter.com/jxxf/status/1027358517462626304
 
 ## `wasm-bindgen`
 
-
+![wb](./assets/wasm-bindgen.png)
 
 ---
 
