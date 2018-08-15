@@ -35,7 +35,8 @@
 
 # Why Wasm?
 
-- Part of the Open Web Platform
+- Part of the [Open Web Platform](https://github.com/webassembly/design)
+    - Designed by representatives from major browser vendors
     - Itself platform agnostic
 - Memory Safe (sandboxed)
 - Achieves high performance

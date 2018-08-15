@@ -1,6 +1,6 @@
 # Rust + Webassembly
 
-## Information
+
 
 ## Links
 
