@@ -2,7 +2,7 @@
 
 ### 🦀 + 🕸
 
-#### ![twitter](assets/twitter.png)[@EmmaGRamirez](https://twitter.com/EmmaGRamirez) | ![github](assets/github.png)[EmmaRamirez](https://github.com/EmmaRamirez)
+#### ![twitter](./assets/twitter.png)[@EmmaGRamirez](https://twitter.com/EmmaGRamirez) | ![github](./assets/github.png)[EmmaRamirez](https://github.com/EmmaRamirez)
 
 
 ---
@@ -11,20 +11,22 @@
 
 ---
 
-# Follow Along!
+## Follow Along!
 
-[![talk](./assets/the-talk.png)](https://github.com/EmmaRamirez/rust-and-webassembly-talk)
+> [link](https://github.com/EmmaRamirez/rust-and-webassembly-talk)
+
+![talk](./assets/the-talk.png)
 
 ---
 
-# A Brief History of Trying to Embed Things in JavaScript
+## A Brief History of Trying to Embed Things in JavaScript
 
 - Java Applets
 - Asm.js
 
 ---
 
-# Things to Know About JS
+## Things to Know About JS
 
 - JS is dynamic
 - JS uses garbage collection
@@ -33,11 +35,11 @@
 
 ---
 
-![wasm](assets/wasm.svg)
+![wasm](./assets/wasm.svg)
 
 ---
 
-# Why Wasm?
+## Why Wasm?
 
 - Part of the [Open Web Platform](https://github.com/webassembly/design)
     - Designed by representatives from major browser vendors
@@ -48,9 +50,9 @@
 
 ---
 
-# Contrived Canonical Example
+## Contrived Canonical Example
 
-## Rust
+### Rust
 
 ```rust
 #[no_mangle]
@@ -61,7 +63,7 @@ pub extern "C" fn add_one(x: i32) -> i32 {
 
 ---
 
-## Wasm
+### Wasm
 
 ```webassembly
 (module
@@ -76,7 +78,7 @@ pub extern "C" fn add_one(x: i32) -> i32 {
 
 ---
 
-## JS "Bridge"
+### JS "Bridge"
 
 ```javascript
 fetch('../out/main.wasm').then(response =>
@@ -91,13 +93,13 @@ fetch('../out/main.wasm').then(response =>
 
 # Is WASM going to replace JS?
 
-----
+---
 
 <iframe src="https://giphy.com/embed/12XMGIWtrHBl5e" width="480" height="392" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/the-office-no-steve-carell-12XMGIWtrHBl5e"></p>
 
 ---
 
-# Limitations of Wasm
+## Limitations of Wasm
 
 Wasm modules can only call functions that deal with:
 
@@ -110,7 +112,7 @@ Wasm is supported in all major browsers, but the spec is still developing. (Howe
 
 ---
 
-# Why Rust
+## Why Rust
 
 ```shell
 cargo build --target wasm-unknown-unknown
@@ -124,11 +126,15 @@ cargo build --target wasm-unknown-unknown
 
 # In the Wild
 
-[!ray](assets/raytracer-wasm.png)
+---
+
+## Raytracer
+
+[!ray](./assets/raytracer-wasm.png)
 
 ---
 
-# Vim
+## Vim
 
 
 ---
@@ -137,17 +143,17 @@ https://twitter.com/jxxf/status/1027358517462626304
 
 ---
 
-# Tools & Ecosystem
+## Tools & Ecosystem
 
 ---
 
-# wasm-bindgen
+## `wasm-bindgen`
 
 
 
 ---
 
-# js-sys
+## `js-sys`
 
 Get access to API from the ECMAScript standard without having to write them by hand with bindgen.
 
@@ -166,7 +172,7 @@ pub fn timed(callback: &js_sys::Function) -> f64 {
 
 ---
 
-# Things to Keep in Mind
+## Things to Keep in Mind
 
 - Glue Code
 - Native Addons
@@ -174,7 +180,7 @@ pub fn timed(callback: &js_sys::Function) -> f64 {
 
 ---
 
-# Other Possibilities
+## Other Possibilities
 
 - C/C++
 - Assemblyscript
@@ -183,7 +189,7 @@ pub fn timed(callback: &js_sys::Function) -> f64 {
 
 --- 
 
-# The Future
+## The Future
 
 - Host bindings
 - Garbage collection
