@@ -8,7 +8,11 @@
     "build:ts": "tsc ./presentation/index.ts",
     "build": "npm run build:ts && make",
     "build:ts:watch": "npm run build:ts -- --watch",
-    "start": "python -m SimpleHTTPServer"
+    "start": "python -m SimpleHTTPServer",
+    "serve": "webpack-dev-server",
+    "build-debug": "cargo +nightly build --target wasm32-unknown-unknown && wasm-bindgen target/wasm32-unknown-unknown/debug/wasm_game_of_life.wasm --out-dir .",
+    "build-release": "cargo +nightly build --release --target wasm32-unknown-unknown && wasm-bindgen target/wasm32-unknown-unknown/release/wasm_game_of_life.wasm --out-dir .",
+    "bundle": "npm run build-release && webpack"
   },
   "repository": {
     "type": "git",
@@ -20,5 +24,14 @@
   "bugs": {
     "url": "https://github.com/EmmaRamirez/rust-and-webassembly-talk/issues"
   },
-  "homepage": "https://github.com/EmmaRamirez/rust-and-webassembly-talk#readme"
+  "homepage": "https://github.com/EmmaRamirez/rust-and-webassembly-talk#readme",
+  "devDependencies": {
+    "copy-webpack-plugin": "^4.5.2",
+    "webpack": "^4.16.1",
+    "webpack-cli": "^3.1.0",
+    "webpack-dev-server": "^3.1.4"
+  },
+  "dependencies": {
+    "typescript": "^3.0.1"
+  }
 }

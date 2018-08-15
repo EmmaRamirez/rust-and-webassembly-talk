@@ -112,6 +112,23 @@
         </section>
 
         <section>
+            <h2>js-sys</h2>
+            <p>Get access to API from the ECMAScript standard without having to write them by hand with bindgen.</p>
+            <code>
+extern crate js_sys;
+extern crate wasm_bindgen;
+use wasm_bindgen::prelude::*;
+#[wasm_bindgen]
+pub fn timed(callback: &js_sys::Function) -> f64 {
+    let then = js_sys::Date::now();
+    callback.apply(JsValue::null(), &js_sys::Array::new()).unwrap();
+    let now = js_sys::Date::now();
+    now - then
+}
+            </code>
+        </section>
+
+        <section>
             <h1>Things to Keep in Mind</h1>
             <ul>
                 <li>Glue Code</li>
