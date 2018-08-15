@@ -146,14 +146,20 @@ cargo build --target wasm-unknown-unknown
 
 ---
 
-## Raytracer
+<iframe src='http://localhost:' />
 
-[!ray](./assets/raytracer-wasm.png)
+
+---
+
+## Raytracer
 
 ---
 
 ## Vim
 
+---
+
+![process](./assets/build-process.png)
 
 ---
 
