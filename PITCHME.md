@@ -146,20 +146,7 @@ cargo build --target wasm-unknown-unknown
 
 ---
 
-# 
-
-
----
-
-## Raytracer
-
----
-
 ## Vim
-
----
-
-![process](./assets/build-process.png)
 
 ---
 

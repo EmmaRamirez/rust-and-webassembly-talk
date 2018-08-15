@@ -23,7 +23,9 @@ pub enum Cell {
     Alive = 1,
 }
 
+// TODO: impl
 impl Cell {
+    // Toggles Cell state using pattern matching
     fn toggle(&mut self) {
         *self = match *self {
             Cell::Dead => Cell::Alive,
@@ -39,13 +41,13 @@ pub struct Universe {
     cells: Vec<Cell>,
 }
 
-/// Public methods, exported to JavaScript.
 #[wasm_bindgen]
 impl Universe {
     pub fn new() -> Universe {
         let width = 64;
         let height = 64;
 
+        // Iterate over Cells and assign Alive or Dead
         let cells = (0..width * height)
             .map(|i| {
                 if i % 2 == 0 || i % 7 == 0 {
@@ -75,6 +77,8 @@ impl Universe {
         self.cells.as_ptr()
     }
 
+    // The main course
+    // The tick function, 
     pub fn tick(&mut self) {
         let mut next = self.cells.clone();
 
