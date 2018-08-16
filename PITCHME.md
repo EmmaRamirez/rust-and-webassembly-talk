@@ -132,19 +132,23 @@ Wasm only uses 4 value types:
 
 Wasm uses *linear memory*
 
+No garbage collection 
+
 Wasm is supported in all major browsers, but the spec is still developing. (However new iterations will be fully backwards compatible!)
 
 ---
 
 ## Why Rust?
 
-```shell
-cargo build --target wasm-unknown-unknown
-```
-
 - Fast, on par with C++
 - Memory-safe
 - Thread-safe
+
+---
+
+```shell
+cargo build --target wasm-unknown-unknown
+```
 
 ---
 
